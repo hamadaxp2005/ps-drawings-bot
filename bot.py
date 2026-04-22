@@ -1,11 +1,11 @@
-import time
-import telebot
+Pythonimport telebot
 from telebot import types
-from keep_alive import keep_alive
+import os
 
-keep_alive()
+TOKEN = os.getenv("TOKEN")
+if not TOKEN:
+    TOKEN = "8320654489:AAFNgRdPMRlaclabDNm7bqRsFvVMJcpkHq8"
 
-TOKEN = "8320654489:AAFNgRdPMRlaclabDNm7bqRsFvVMJcpkHq8"
 bot = telebot.TeleBot(TOKEN)
 
 # ================== كل المباني (النسخة المحدثة) ==================
