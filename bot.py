@@ -78,11 +78,11 @@ BUILDINGS = {
         "معماري": "لا يوجد معماري",
         "إنشائي": "https://drive.google.com/drive/u/0/folders/1WAsP4BVGqgLV2HOHfV944us_acmzXPPB"
     },
-    "Thru.Wall": {
+    "Thrust Wall": {
         "معماري": "لا يوجد معماري",
         "إنشائي": "https://drive.google.com/drive/u/0/folders/1KiQVKiZ1-PZisLLehH8vlJCy58mbo5cq"
     },
-    "Thru.Block": {
+    "Thrust Block": {
         "معماري": "لا يوجد معماري",
         "إنشائي": "https://drive.google.com/drive/u/0/folders/1fRpU62Qf5d7YWbAWxj55Hl2SQf_2Xoyi"
     },
@@ -110,11 +110,11 @@ BUILDINGS = {
         "معماري": "لا يوجد معماري",
         "إنشائي": "https://drive.google.com/drive/u/0/folders/1OYnaGDYD86ogQTUjRz8k0OfH2t5G6Vf5"
     },
-    "Steel Doors -Distr": {
+    "Steel Doors -Distributer": {
         "معماري": "لا يوجد معماري",
         "إنشائي": "https://drive.google.com/drive/u/0/folders/1qs0bJG9O-z-nG3sQ7QwhXKH8e_pVQ8ON"
     },
-    "B.Steel Doors -Dis": {
+    "Big.Steel Doors -Distributer": {
         "معماري": "لا يوجد معماري",
         "إنشائي": "https://drive.google.com/drive/u/0/folders/1qxay63Aqa7d9rIeVFHd5hkfMJWhwS7fe"
     },
