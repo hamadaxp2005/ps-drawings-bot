@@ -8,107 +8,127 @@ if not TOKEN:
 
 bot = telebot.TeleBot(TOKEN)
 
-# ================== كل المباني (النسخة المحدثة) ==================
+# ================== كل المباني من الـ Excel الجديد (version 3) ==================
 BUILDINGS = {
     "PS.28": {
-        "معماري": "https://drive.google.com/drive/u/0/folders/1Ti4CUiut8geB7J5A3vmK1TU8ha8JRMMQ",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1tUaMeaudHYu9EiiIWxbH3FvH5N3QzNtX"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1aVGq1TIlw8WAtmFtX9pULo_b4WrvOhVI",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1JqG-YZJlNeB9w-Wt7LiqV5PSh5zXmHxR"
     },
     "PS.29": {
-        "معماري": "https://drive.google.com/drive/folders/1nIDNYcMgAgA5_JBNTn3vAWYk_c5y-cUM",
-        "إنشائي": "https://drive.google.com/drive/folders/15lA77eQB523MfVIif07Lfi9Jzruau_tP?usp=drive"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1T5uG1QXoCJW61U5zMbfp2NL9BVPozaGt",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1K377AX5ykH-zJTkDAW6bIsdPMNN57zFW"
     },
     "PS.31": {
-        "معماري": "https://drive.google.com/drive/folders/1JXay96a02F_RLod7gynkd4quhCMcH9OA?usp=drive",
-        "إنشائي": "https://drive.google.com/drive/folders/1dYsPGO8ZhMagA6plGLBl5hdbXOXe7wK_?usp=drive"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1Oad9src7ALeZQPSrQf93VTKlgAfXT1Jf",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1NJFUX7nvdltmekXFUkrhIGBk9R-nHCsn"
     },
     "PS.32": {
-        "معماري": "https://drive.google.com/drive/folders/18Zr9aR6vqsFMiCQcYD9ciCMwWLWb5qXH?usp=drive",
-        "إنشائي": "https://drive.google.com/drive/folders/1lPGJeqPI_XZziEFmxVhYsnNjaYMb6niT"
+        "معماري": "https://drive.google.com/drive/u/0/folders/18X9Wv7g1KxYdCwjfWLREDefMrsBm_DXk",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/12dndrWg2MGZ-CXq4ZGCWXngBoVZhgfb5"
     },
     "PS.62": {
-        "معماري": "https://drive.google.com/drive/u/0/folders/1oMx4AQnRF6MT9MRr_B2oUsTSDXL6h-Yc",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1wkoDRIVlfsm8fSaY8BDMJ0azLomeXCEK"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1zn6mnWDHmpMR9jCn4ZIUUoWWUJqrIgZn",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1wv6sBCXQynO2fV_0lMZXMhSTaNbCssJc"
     },
     "PS.69": {
-        "معماري": "https://drive.google.com/drive/u/0/folders/1IS4k7a6FvV3fYZ-LgL5Q-LzGDdKgD0mi",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1ilQCTQ-mroSS51BG2TVyNyN--hyAZFDH"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1mxWT75bzXTj0eejLAEYNnhOBTQwj_SU0",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1Xis7X5Peitbp53iR8Upzy5afUcFpPSh5"
+    },
+    "PS.29 Interlock": {
+        "معماري": "https://drive.google.com/drive/u/0/folders/1eqjo8vrnGyVwZWVPaKkTrMi1fqw9Df-p",
+        "إنشائي": "لا يوجد انشائي"
+    },
+    "PS.31-32-69-62 Interlock": {
+        "معماري": "https://drive.google.com/drive/u/0/folders/1aa8IM5SrUVEPNp_VjmwhRxs7O4Yv99Lh",
+        "إنشائي": "لا يوجد انشائي"
     },
     "Admin": {
-        "معماري": "https://drive.google.com/drive/u/0/folders/1pRrUjKQDQO1IdVutLAQPOVyeBfG-gVJs",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1jFubc7QYjYGCFtg7IR862T4XfxD3aH86"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1OPcdo_omU3GHkm73IXo0wFaigl2FxOAU",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1NFpnP9ldMa8vfoY1Fnh4pMSenvUw0SHj"
+    },
+    "Farmer Traditional": {
+        "معماري": "https://drive.google.com/drive/u/0/folders/1i-9sDaLfK5Jvp9LULlUgrgczisFgs_7e",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1d20105FgUF6cfgnd0tjqUaaeQ8Tmvjgi"
+    },
+    "Farmer precast": {
+        "معماري": "https://drive.google.com/drive/u/0/folders/1WAQvTZ1hybUOPsiTeabr_TsRy5-CWsuH",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1NgYiP8w8NtEoH2TgD-oYUWiGVa90LVGy"
     },
     "Distributer": {
-        "معماري": "https://drive.google.com/drive/u/0/folders/1X67-YS-ak9mEfq3bfLKckwtjEM5KZjnt",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1jOSa1EIPr6RK5cRTikG819LGN6tU7tgQ"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1npIf_uAfDmbUq4emLJp92qKnk-WatvW-",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/16u7qxcyU50fTriPoyPKiI3T_v9y9Pi_n"
     },
     "Substation": {
-        "معماري": "https://drive.google.com/drive/folders/1rN-2yYYjw5RVMajXKQPpuRR6m15H30WP",
-        "إنشائي": "https://drive.google.com/drive/folders/14hKytYP0A9BqmYmZClK7u-QNCcHluSLk"
+        "معماري": "https://drive.google.com/drive/u/0/folders/1WufXTr5Psade3sHjQN-c2qZA9E5k6ewr",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1deF_wf-vzNCXJvyask_xpDSVeBBzwV38"
     },
     "Fire Tank": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1_mzDHMxNBKUlo22L20XRWYhs8TfYTUsd"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1LX9KiWZi9AhZxNxCVTdKJbtqsACGIPSJ"
     },
     "Septic Tank": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1dUcmhlPMARuJdvU1WK6zh1iWQzskgQ_y"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1pb_3Ov4EMuZiYDHsZA9A6LV8c7BxqyBa"
     },
     "غرفة Bypass رقم 1": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/folders/1lZEm9KowJDFX0KPWp4oXDb24-023g22D?usp=drive"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1X6a476n6SAYsTQZOJPAlyAEm4PvY9_VL"
     },
     "غرفة Bypass رقم 2": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/folders/1vJLJwhF54ZnxzrvVtwqWgDzpT4mBdaO_?usp=drive"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1WAsP4BVGqgLV2HOHfV944us_acmzXPPB"
     },
     "Thru.Wall": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/folders/1vLGUCWzaehlN8z9ACq8aiNECrX1St27v"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1KiQVKiZ1-PZisLLehH8vlJCy58mbo5cq"
     },
     "Thru.Block": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1N5_MmHR1p9ao3Vy-M1GL6jqG4KnrEZ1Y"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1fRpU62Qf5d7YWbAWxj55Hl2SQf_2Xoyi"
     },
     "Off-take Thru.Block": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/folders/1Gw2GIOafhozlcSsTVOJEVnwYNzgblV_8"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1_R3bAwZuadWJ1J50yrrlyfKUGVbOMfAg"
     },
     "Off-take Valve Pads": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1sS_pgudRjWo-3RaXoFRQVZ2i8J5rsIiF"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1ZdkCEvkgmZTf-EVA5NV4HmVE3d17Nyc-"
     },
     "Thru.Block -(S)": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1oU09YfxIvptFleOKxc3vHChj960pJice"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1JlVQwB2Icwb4rJG7zd9ugnI7arjlxjjR"
     },
     "بادات التنصيص والمناورة": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/folders/1xf26Rxompb01SrfWaYbsbihMuYJLwQ7U"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1G_zS2FgRWfIrliz9c93K7JnAyvm-0s-Z"
     },
     "Electrical Manhole": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/folders/1eqKFwzJRbiHXLhdbAs5dJrI2GW_9mzjA?usp=drive"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1852XDFvWfR1JStKfDDJpB40a0ST5nfFc"
     },
     "Steel Doors -PS": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1jktwC8G6o3x30MdkwnMmlpZ-0B6TfQFN"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1OYnaGDYD86ogQTUjRz8k0OfH2t5G6Vf5"
     },
     "Steel Doors -Distr": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1sj3kraV97QWT-Fna7_KxhKKdlF8nTs_i"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1qs0bJG9O-z-nG3sQ7QwhXKH8e_pVQ8ON"
     },
     "B.Steel Doors -Dis": {
         "معماري": "لا يوجد معماري",
-        "إنشائي": "https://drive.google.com/drive/u/0/folders/1rN4uUqgap4Aqw5exZc2ekOJTjZxsSUgc"
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1qxay63Aqa7d9rIeVFHd5hkfMJWhwS7fe"
     },
+    "مظلة خزان الحريق": {
+        "معماري": "لا يوجد معماري",
+        "إنشائي": "https://drive.google.com/drive/u/0/folders/1n5NnA9aIhsB9SoY835wh0zE85rcIG15W"
+    }
 }
 
-# متغير عشان نحفظ آخر رسالة لكل يوزر
+# متغير لحفظ آخر رسالة لكل مستخدم (عشان نعدلها في مكانها)
 user_messages = {}
 
 def edit_or_send_message(chat_id, text, markup=None):
-    """دالة ذكية: تعدل الرسالة لو موجودة، أو تبعت واحدة جديدة"""
+    """دالة ذكية: تعدل الرسالة لو موجودة أو ترسل واحدة جديدة"""
     try:
         if chat_id in user_messages:
             bot.edit_message_text(
@@ -126,7 +146,8 @@ def edit_or_send_message(chat_id, text, markup=None):
                 parse_mode="Markdown"
             )
             user_messages[chat_id] = msg.message_id
-    except:
+    except Exception:
+        # لو حصل أي خطأ، نرسل رسالة جديدة
         msg = bot.send_message(chat_id=chat_id, text=text, reply_markup=markup, parse_mode="Markdown")
         user_messages[chat_id] = msg.message_id
 
@@ -134,45 +155,37 @@ def show_buildings(chat_id):
     keyboard = []
     row = []
     for building in BUILDINGS.keys():
-        row.append(
-            types.InlineKeyboardButton(text=building, callback_data=f"b:{building}")
-        )
+        row.append(types.InlineKeyboardButton(text=building, callback_data=f"b:{building}"))
         if len(row) == 2:
             keyboard.append(row)
             row = []
     if row:
         keyboard.append(row)
-    keyboard.append(
-        [types.InlineKeyboardButton(text="🔄 تحديث", callback_data="refresh")]
-    )
+    keyboard.append([types.InlineKeyboardButton(text="🔄 تحديث", callback_data="refresh")])
     markup = types.InlineKeyboardMarkup(keyboard)
     edit_or_send_message(chat_id, "🏗️ **اختر المبنى:**", markup)
 
 def show_types(chat_id, building):
     data = BUILDINGS.get(building, {})
     keyboard = []
-
-    if data.get("معماري") and data["معماري"] and "لا يوجد معماري" not in data["معماري"]:
-        keyboard.append(
-            [types.InlineKeyboardButton(text="📐 لوحات معمارية", url=data["معماري"])]
-        )
-
-    if data.get("إنشائي") and data["إنشائي"] and "لا يوجد معماري" not in data["إنشائي"]:
-        keyboard.append(
-            [types.InlineKeyboardButton(text="🏗️ لوحات إنشائية", url=data["إنشائي"])]
-        )
-
+    
+    # عرض زرار معماري فقط لو فيه رابط حقيقي
+    if data.get("معماري") and data["معماري"] and "لا يوجد" not in data["معماري"].lower():
+        keyboard.append([types.InlineKeyboardButton(text="📐 لوحات معمارية", url=data["معماري"])])
+    
+    # عرض زرار إنشائي فقط لو فيه رابط حقيقي
+    if data.get("إنشائي") and data["إنشائي"] and "لا يوجد" not in data["إنشائي"].lower():
+        keyboard.append([types.InlineKeyboardButton(text="🏗️ لوحات إنشائية", url=data["إنشائي"])])
+    
     keyboard.append([types.InlineKeyboardButton(text="🔙 رجوع", callback_data="back")])
     markup = types.InlineKeyboardMarkup(keyboard)
-
+    
     text = f"📁 **{building}**\nاختر نوع اللوحات:"
-
-    if not any(
-        data.get(k) and "لا يوجد" not in str(data.get(k)) 
-        for k in ["معماري", "إنشائي"]
-    ):
+    
+    # لو مفيش أي لوحات
+    if len(keyboard) <= 1:
         text = f"⚠️ **لسه مفيش لوحات مسجلة لـ {building}**"
-
+    
     edit_or_send_message(chat_id, text, markup)
 
 @bot.message_handler(commands=["start", "menu"])
