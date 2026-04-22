@@ -8,7 +8,7 @@ if not TOKEN:
 
 bot = telebot.TeleBot(TOKEN)
 
-# ================== كل المباني من الـ Excel الجديد (version 3) ==================
+# ================== كل المباني من Excel (version 3) - محدثة 100% ==================
 BUILDINGS = {
     "PS.28": {
         "معماري": "https://drive.google.com/drive/u/0/folders/1aVGq1TIlw8WAtmFtX9pULo_b4WrvOhVI",
@@ -124,11 +124,10 @@ BUILDINGS = {
     }
 }
 
-# متغير لحفظ آخر رسالة لكل مستخدم (عشان نعدلها في مكانها)
+# متغير لحفظ آخر رسالة لكل مستخدم
 user_messages = {}
 
 def edit_or_send_message(chat_id, text, markup=None):
-    """دالة ذكية: تعدل الرسالة لو موجودة أو ترسل واحدة جديدة"""
     try:
         if chat_id in user_messages:
             bot.edit_message_text(
@@ -139,15 +138,9 @@ def edit_or_send_message(chat_id, text, markup=None):
                 parse_mode="Markdown"
             )
         else:
-            msg = bot.send_message(
-                chat_id=chat_id,
-                text=text,
-                reply_markup=markup,
-                parse_mode="Markdown"
-            )
+            msg = bot.send_message(chat_id=chat_id, text=text, reply_markup=markup, parse_mode="Markdown")
             user_messages[chat_id] = msg.message_id
-    except Exception:
-        # لو حصل أي خطأ، نرسل رسالة جديدة
+    except:
         msg = bot.send_message(chat_id=chat_id, text=text, reply_markup=markup, parse_mode="Markdown")
         user_messages[chat_id] = msg.message_id
 
@@ -169,11 +162,9 @@ def show_types(chat_id, building):
     data = BUILDINGS.get(building, {})
     keyboard = []
     
-    # عرض زرار معماري فقط لو فيه رابط حقيقي
     if data.get("معماري") and data["معماري"] and "لا يوجد" not in data["معماري"].lower():
         keyboard.append([types.InlineKeyboardButton(text="📐 لوحات معمارية", url=data["معماري"])])
     
-    # عرض زرار إنشائي فقط لو فيه رابط حقيقي
     if data.get("إنشائي") and data["إنشائي"] and "لا يوجد" not in data["إنشائي"].lower():
         keyboard.append([types.InlineKeyboardButton(text="🏗️ لوحات إنشائية", url=data["إنشائي"])])
     
@@ -181,8 +172,6 @@ def show_types(chat_id, building):
     markup = types.InlineKeyboardMarkup(keyboard)
     
     text = f"📁 **{building}**\nاختر نوع اللوحات:"
-    
-    # لو مفيش أي لوحات
     if len(keyboard) <= 1:
         text = f"⚠️ **لسه مفيش لوحات مسجلة لـ {building}**"
     
